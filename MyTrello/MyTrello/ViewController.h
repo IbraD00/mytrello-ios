@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OAUthiOS/OAuthiOS.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<OAuthIODelegate>
+
+// Handles the results of a successful authentication
+- (void)didReceiveOAuthIOResponse:(OAuthIORequest *)request;
+
+// Handle errors in the case of an unsuccessful authentication
+- (void)didFailWithOAuthIOError:(NSError *)error;
 
 @property (weak, nonatomic) IBOutlet UILabel *InfoAction;
 - (IBAction)loginAction:(id)sender;

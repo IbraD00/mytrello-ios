@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import <OAuthiOS/OAuthiOS.h>
 
 @interface ViewController ()
+
+@property OAuthIORequest *request_object;
 
 @end
 
@@ -32,5 +33,33 @@
     [oauthioModal showWithProvider:@"trello"];
 }
 
+- (void)didFailWithOAuthIOError:(NSError *)error {
+    NSLog(@"%@", error);
+}
+
+- (void)didReceiveOAuthIOResponse:(OAuthIORequest *)request {
+    NSLog(@"%@", request.data.oauth_token);
+//    NSDictionary *credentials = [request getCredentials];
+    NSURL *url = [NSURL URLWithString:@"https://api.trello.com/1/members/ibrad00/boards?key=84f0517e4d81d7592f99c5170fc8ce0d"];
+    NSURLRequest *boardRequest = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:boardRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
+    {
+        if (data.length > 0 && connectionError == nil)
+        {
+            NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            NSLog(@"%@", responseData);
+        }
+    }];
+    
+    
+
+}
+
+- (void) didReceiveOAuthIOCode:(NSString *)code {}
+
+- (void) didAuthenticateServerSide:(NSString *)body andResponse:(NSURLResponse *)response {}
+
+- (void) didFailAuthenticationServerSide:(NSString *)body andResponse:(NSURLResponse *)response andError:(NSError *)error {}
 
 @end
