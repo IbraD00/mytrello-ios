@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		672120A11D340056000BB39F /* OAuthiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672120A01D340056000BB39F /* OAuthiOS.framework */; };
 		67CD150C1D33C44900548ED4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD150B1D33C44900548ED4 /* main.m */; };
 		67CD150F1D33C44900548ED4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD150E1D33C44900548ED4 /* AppDelegate.m */; };
 		67CD15121D33C44900548ED4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD15111D33C44900548ED4 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		672120A01D340056000BB39F /* OAuthiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthiOS.framework; path = Dist/OAuthiOS.framework; sourceTree = "<group>"; };
 		67CD15071D33C44900548ED4 /* MyTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CD150B1D33C44900548ED4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		67CD150D1D33C44900548ED4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				672120A11D340056000BB39F /* OAuthiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		67CD14FE1D33C44900548ED4 = {
 			isa = PBXGroup;
 			children = (
+				672120A01D340056000BB39F /* OAuthiOS.framework */,
 				67CD15091D33C44900548ED4 /* MyTrello */,
 				67CD15231D33C44900548ED4 /* MyTrelloTests */,
 				67CD152E1D33C44900548ED4 /* MyTrelloUITests */,
@@ -414,6 +418,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dist",
+				);
 				INFOPLIST_FILE = MyTrello/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,6 +435,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dist",
+				);
 				INFOPLIST_FILE = MyTrello/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

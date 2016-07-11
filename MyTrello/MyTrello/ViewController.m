@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
+#import <OAuthiOS/OAuthiOS.h>
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController : UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +28,9 @@
 - (IBAction)loginAction:(id)sender {
     NSString * info = @"Hello world";
     _InfoAction.text = info;
-    
+    OAuthIOModal *oauthioModal = [[OAuthIOModal alloc] initWithKey:@"JLNwgM9ro0H5A_Q87qMmVzn4sY0" delegate:self];
+    [oauthioModal showWithProvider:@"trello"];
 }
+
+
 @end

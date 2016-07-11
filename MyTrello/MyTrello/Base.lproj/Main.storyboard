@@ -18,30 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-IY-YGE">
-                                <rect key="frame" x="51" y="384" width="219" height="30"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.24313725490196078" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Connexion">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Kz-7X9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MyTrello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-VU-GfV">
                                 <rect key="frame" x="83" y="20" width="154" height="57"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fu0-vG-yHg">
-                                <rect key="frame" x="51" y="269" width="219" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejr-OC-Q8j">
-                                <rect key="frame" x="51" y="240" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,15 +30,21 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-IY-YGE">
+                                <rect key="frame" x="51" y="269" width="219" height="30"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.24313725490196078" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Se connecter avec Trello">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Kz-7X9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.55433234766078987" blue="0.63735034879336339" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T14-IY-YGE" secondAttribute="bottom" constant="154" id="I0j-3f-BT3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T14-IY-YGE" secondAttribute="trailing" constant="30" id="TEe-ii-ZAJ"/>
-                            <constraint firstItem="Fu0-vG-yHg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="Tcj-H3-D5s"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Fu0-vG-yHg" secondAttribute="trailing" constant="30" id="auY-Dh-dPi"/>
                             <constraint firstItem="T14-IY-YGE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="ef9-fz-uBe"/>
-                            <constraint firstItem="T14-IY-YGE" firstAttribute="top" secondItem="Fu0-vG-yHg" secondAttribute="bottom" constant="85" id="nNB-Bk-G5a"/>
                         </constraints>
                     </view>
                     <connections>
