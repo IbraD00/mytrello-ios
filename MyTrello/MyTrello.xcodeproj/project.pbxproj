@@ -413,7 +413,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MyTrello/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IbraD00.MyTrello;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +426,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MyTrello/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IbraD00.MyTrello;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +500,7 @@
 				67CD15361D33C44900548ED4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		67CD15371D33C44900548ED4 /* Build configuration list for PBXNativeTarget "MyTrelloTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				67CD15391D33C44900548ED4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		67CD153A1D33C44900548ED4 /* Build configuration list for PBXNativeTarget "MyTrelloUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				67CD153C1D33C44900548ED4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -24,4 +24,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)loginAction:(id)sender {
+    NSString * info = @"Hello world";
+    _InfoAction.text = info;
+    
+}
 @end
