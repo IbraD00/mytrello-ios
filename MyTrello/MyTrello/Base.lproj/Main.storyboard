@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WMD-RE-ZQg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,19 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MyTrello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-VU-GfV">
-                                <rect key="frame" x="83" y="20" width="154" height="57"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYH-Ib-l67">
-                                <rect key="frame" x="20" y="91" width="280" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-IY-YGE">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-IY-YGE">
                                 <rect key="frame" x="51" y="269" width="219" height="30"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.24313725490196078" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Se connecter avec Trello">
@@ -40,20 +28,80 @@
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Kz-7X9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYH-Ib-l67">
+                                <rect key="frame" x="20" y="138" width="280" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MyTrello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-VU-GfV">
+                                <rect key="frame" x="82" y="53" width="157" height="82.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.55433234766078987" blue="0.63735034879336339" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="T14-IY-YGE" secondAttribute="trailing" constant="30" id="TEe-ii-ZAJ"/>
-                            <constraint firstItem="T14-IY-YGE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="ef9-fz-uBe"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lJP-LA-yss"/>
                     <connections>
                         <outlet property="InfoAction" destination="mYH-Ib-l67" id="ual-qL-H7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="74"/>
+            <point key="canvasLocation" x="-3060" y="-471"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rr3-rx-oox">
+            <objects>
+                <navigationController id="WMD-RE-ZQg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAz-6d-l69">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HbR-7q-ukh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XrO-bI-Bso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3874" y="-9"/>
+        </scene>
+        <!--Board Controller-->
+        <scene sceneID="BYZ-cv-law">
+            <objects>
+                <viewController storyboardIdentifier="Boards" id="dL0-73-nYi" customClass="BoardController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v80-Bf-zrx"/>
+                        <viewControllerLayoutGuide type="bottom" id="9iX-zo-bkD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MrY-WM-QVw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Yi-3b-gZa">
+                                <rect key="frame" x="20" y="70" width="280" height="478"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dL0-73-nYi" id="KXI-If-Q6H"/>
+                                    <outlet property="delegate" destination="dL0-73-nYi" id="s9Y-vJ-g4g"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="5Yi-3b-gZa" secondAttribute="leading" id="189-My-Omg"/>
+                            <constraint firstItem="9iX-zo-bkD" firstAttribute="top" secondItem="5Yi-3b-gZa" secondAttribute="bottom" constant="20" id="Ozz-NS-eJL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Yi-3b-gZa" secondAttribute="trailing" id="jc0-fs-oZu"/>
+                            <constraint firstItem="5Yi-3b-gZa" firstAttribute="top" secondItem="v80-Bf-zrx" secondAttribute="bottom" constant="50" id="ofr-Ow-ug2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5la-3J-8NL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Oc-ag-Vq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2580" y="-471"/>
         </scene>
     </scenes>
 </document>

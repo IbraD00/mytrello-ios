@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BoardController.h"
 
 @interface ViewController ()
 
@@ -27,33 +28,29 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    NSString * info = @"Hello world";
-    _InfoAction.text = info;
     OAuthIOModal *oauthioModal = [[OAuthIOModal alloc] initWithKey:@"JLNwgM9ro0H5A_Q87qMmVzn4sY0" delegate:self];
-    [oauthioModal showWithProvider:@"trello"];
+    NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
+    if ([oauthioModal cacheAvailableForProvider:@"trello"]) {
+        NSLog(@"ya du cache");
+    } else {
+        [options setObject:@"true" forKey:@"cache"];
+        [oauthioModal showWithProvider:@"trello" options:options];
+    }
+    
+//    NSString *data = [options objectForKey:@"cache"];
+//    NSLog(@"%@", data);
+    
 }
 
 - (void)didFailWithOAuthIOError:(NSError *)error {
     NSLog(@"%@", error);
+    NSString * info = @"Impossible de se connecter";
+    _InfoAction.text = info;
 }
 
 - (void)didReceiveOAuthIOResponse:(OAuthIORequest *)request {
-    NSLog(@"%@", request.data.oauth_token);
-//    NSDictionary *credentials = [request getCredentials];
-    NSURL *url = [NSURL URLWithString:@"https://api.trello.com/1/members/ibrad00/boards?key=84f0517e4d81d7592f99c5170fc8ce0d"];
-    NSURLRequest *boardRequest = [NSURLRequest requestWithURL:url];
-    
-    [NSURLConnection sendAsynchronousRequest:boardRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
-    {
-        if (data.length > 0 && connectionError == nil)
-        {
-            NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-            NSLog(@"%@", responseData);
-        }
-    }];
-    
-    
-
+//    BoardController* viewController = [[BoardController alloc] init];
+//    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void) didReceiveOAuthIOCode:(NSString *)code {}
