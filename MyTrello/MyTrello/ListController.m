@@ -1,20 +1,20 @@
 //
-//  BoardController.m
+//  ListController.m
 //  MyTrello
 //
-//  Created by Ibrahima Dansokho on 12/07/2016.
+//  Created by Ibrahima Dansokho on 14/07/2016.
 //  Copyright © 2016 Ibrahima Dansokho. All rights reserved.
 //
 
-#import "BoardController.h"
+#import "ListController.h"
 
-@interface BoardController ()
+@interface ListController ()
 
 @end
 
-@implementation BoardController {
+@implementation ListController {
     NSMutableArray *tableData;
-    NSMutableDictionary *boards;
+    NSMutableDictionary *lists;
     NSMutableArray *data;
 }
 
@@ -24,13 +24,14 @@
     
     // init table data
     tableData = [NSMutableArray array];
-    boards = [NSMutableDictionary dictionary];
+    lists = [NSMutableDictionary dictionary];
     
     NSString *token = [[NSUserDefaults standardUserDefaults]
-                            stringForKey:@"token"];
+                       stringForKey:@"token"];
     NSLog(@"%@", token);
-//    NSString *token = @"36ba4056078a105b2b556f64607c91d546cd87e8f0f34a43e8bdd2c9de66afcb"; //request.data.oauth_token;
-    NSString *baseUrl = @"https://api.trello.com/1/members/me/boards?key=84f0517e4d81d7592f99c5170fc8ce0d&token=";
+    //    NSString *token = @"36ba4056078a105b2b556f64607c91d546cd87e8f0f34a43e8bdd2c9de66afcb"; //request.data.oauth_token;
+//    NSString *baseUrl = @"https://api.trello.com//1/boards/%@/cards?key=84f0517e4d81d7592f99c5170fc8ce0d&token=";
+    NSString *baseUrl = [NSString stringWithFormat: @"https://api.trello.com/1/boards/%@/lists?key=84f0517e4d81d7592f99c5170fc8ce0d&token=", _board_id];
     NSString *append_url = [baseUrl stringByAppendingString:token];
     NSURL *url = [NSURL URLWithString: append_url];
     NSURLRequest *boardRequest = [NSURLRequest requestWithURL:url];
@@ -46,9 +47,10 @@
             NSLog(@"Error");
         } else {
             for(NSDictionary *item in data) {
-                [boards setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
+                [lists setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
                 [tableData addObject:[item objectForKey:@"name"]];
             }
+            NSLog(@"%@", data);
         }
     }
 }
@@ -64,11 +66,11 @@
     NSString *cellText = selectedCell.textLabel.text;
     
     NSLog(@"%@", cellText);
-    NSLog(@"%@", [boards objectForKey:cellText]);
+    NSLog(@"%@", [lists objectForKey:cellText]);
     
-    ListController * viewController = [[ListController alloc] init];
-    [viewController setBoard_id:[boards objectForKey:cellText]];
-    [self.navigationController pushViewController:viewController animated:YES];
+//    ListController * viewController = [[ListController alloc] init];
+//    [viewController setBoard_id:[boards objectForKey:cellText]];
+//    [self.navigationController pushViewController:viewController animated:YES];
     
     
 }

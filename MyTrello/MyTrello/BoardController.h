@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListController.h"
 
 @interface BoardController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 

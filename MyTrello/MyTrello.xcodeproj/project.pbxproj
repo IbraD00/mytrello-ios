@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		670C19C01D37A7030075DD9E /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C19BF1D37A7030075DD9E /* ListController.m */; };
 		672120A11D340056000BB39F /* OAuthiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672120A01D340056000BB39F /* OAuthiOS.framework */; };
 		679084B51D34EC1B0040FA71 /* BoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679084B41D34EC1B0040FA71 /* BoardController.m */; };
 		67CD150C1D33C44900548ED4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD150B1D33C44900548ED4 /* main.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		670C19BE1D37A7030075DD9E /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListController.h; sourceTree = "<group>"; };
+		670C19BF1D37A7030075DD9E /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListController.m; sourceTree = "<group>"; };
 		672120A01D340056000BB39F /* OAuthiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthiOS.framework; path = Dist/OAuthiOS.framework; sourceTree = "<group>"; };
 		679084B41D34EC1B0040FA71 /* BoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardController.m; sourceTree = "<group>"; };
 		679084B61D34EC5E0040FA71 /* BoardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardController.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 		67CD15091D33C44900548ED4 /* MyTrello */ = {
 			isa = PBXGroup;
 			children = (
+				670C19BE1D37A7030075DD9E /* ListController.h */,
+				670C19BF1D37A7030075DD9E /* ListController.m */,
 				679084B61D34EC5E0040FA71 /* BoardController.h */,
 				679084B41D34EC1B0040FA71 /* BoardController.m */,
 				67CD150D1D33C44900548ED4 /* AppDelegate.h */,
@@ -281,6 +286,7 @@
 			files = (
 				679084B51D34EC1B0040FA71 /* BoardController.m in Sources */,
 				67CD15121D33C44900548ED4 /* ViewController.m in Sources */,
+				670C19C01D37A7030075DD9E /* ListController.m in Sources */,
 				67CD150F1D33C44900548ED4 /* AppDelegate.m in Sources */,
 				67CD150C1D33C44900548ED4 /* main.m in Sources */,
 			);
