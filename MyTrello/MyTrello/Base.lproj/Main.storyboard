@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-IY-YGE">
-                                <rect key="frame" x="51" y="269" width="219" height="30"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.24313725490196078" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Se connecter avec Trello">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Kz-7X9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYH-Ib-l67">
                                 <rect key="frame" x="20" y="138" width="280" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -40,6 +30,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-IY-YGE">
+                                <rect key="frame" x="51" y="269" width="219" height="30"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.24313725490196078" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Boards">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Kz-7X9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.55433234766078987" blue="0.63735034879336339" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
