@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3060" y="-471"/>
+            <point key="canvasLocation" x="-3458" y="-607"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rr3-rx-oox">
@@ -66,7 +66,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrO-bI-Bso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3874" y="-9"/>
+            <point key="canvasLocation" x="-3868" y="-607"/>
         </scene>
         <!--Boards-->
         <scene sceneID="BYZ-cv-law">
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Oc-ag-Vq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2580" y="-471"/>
+            <point key="canvasLocation" x="-3072" y="-607"/>
         </scene>
         <!--Lists-->
         <scene sceneID="mpD-Gh-h30">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dB-L4-T9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2190" y="-471"/>
+            <point key="canvasLocation" x="-2694" y="-607"/>
         </scene>
         <!--Cards-->
         <scene sceneID="twb-zc-rpI">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPO-o9-2U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1812" y="-471"/>
+            <point key="canvasLocation" x="-2290" y="-607"/>
         </scene>
     </scenes>
 </document>

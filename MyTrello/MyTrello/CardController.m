@@ -49,6 +49,7 @@
             for(NSDictionary *item in data) {
                 [cards setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
                 [tableData addObject:[item objectForKey:@"name"]];
+                NSLog(@"%@", [item objectForKey:@"idLabels"]);
             }
         }
     }
@@ -66,12 +67,6 @@
     
     NSLog(@"%@", cellText);
     NSLog(@"%@", [cards objectForKey:cellText]);
-    
-    //    ListController * viewController = [[ListController alloc] init];
-    //    [viewController setBoard_id:[boards objectForKey:cellText]];
-    //    [self.navigationController pushViewController:viewController animated:YES];
-    
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,8 +78,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
+//    cell.backgroundColor = [UIColor orangeColor];
     
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor orangeColor];
+    cell.detailTextLabel.text = @"Red, White";
     return cell;
 }
 
