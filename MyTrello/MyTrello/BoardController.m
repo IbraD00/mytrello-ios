@@ -29,7 +29,6 @@
     NSString *token = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"token"];
     NSLog(@"%@", token);
-//    NSString *token = @"36ba4056078a105b2b556f64607c91d546cd87e8f0f34a43e8bdd2c9de66afcb"; //request.data.oauth_token;
     NSString *baseUrl = @"https://api.trello.com/1/members/me/boards?key=84f0517e4d81d7592f99c5170fc8ce0d&token=";
     NSString *append_url = [baseUrl stringByAppendingString:token];
     NSURL *url = [NSURL URLWithString: append_url];
@@ -63,8 +62,8 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = selectedCell.textLabel.text;
     
-    NSLog(@"%@", cellText);
-    NSLog(@"%@", [boards objectForKey:cellText]);
+    NSLog(@"Board: %@", cellText);
+    NSLog(@"Id: %@", [boards objectForKey:cellText]);
     
     ListController * viewController = [[ListController alloc] init];
     [viewController setBoard_id:[boards objectForKey:cellText]];

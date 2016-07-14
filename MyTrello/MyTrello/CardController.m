@@ -1,20 +1,20 @@
 //
-//  ListController.m
+//  CardController.m
 //  MyTrello
 //
 //  Created by Ibrahima Dansokho on 14/07/2016.
 //  Copyright © 2016 Ibrahima Dansokho. All rights reserved.
 //
 
-#import "ListController.h"
+#import "CardController.h"
 
-@interface ListController ()
+@interface CardController ()
 
 @end
 
-@implementation ListController {
+@implementation CardController {
     NSMutableArray *tableData;
-    NSMutableDictionary *lists;
+    NSMutableDictionary *cards;
     NSMutableArray *data;
 }
 
@@ -24,12 +24,14 @@
     
     // init table data
     tableData = [NSMutableArray array];
-    lists = [NSMutableDictionary dictionary];
+    cards = [NSMutableDictionary dictionary];
     
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     NSLog(@"%@", token);
-    NSString *baseUrl = [NSString stringWithFormat: @"https://api.trello.com/1/boards/%@/lists?key=84f0517e4d81d7592f99c5170fc8ce0d&token=", _board_id];
+    //    NSString *token = @"36ba4056078a105b2b556f64607c91d546cd87e8f0f34a43e8bdd2c9de66afcb"; //request.data.oauth_token;
+    //    NSString *baseUrl = @"https://api.trello.com//1/boards/%@/cards?key=84f0517e4d81d7592f99c5170fc8ce0d&token=";
+    NSString *baseUrl = [NSString stringWithFormat: @"https://api.trello.com/1/lists/%@/cards/?key=84f0517e4d81d7592f99c5170fc8ce0d&token=", _list_id];
     NSString *append_url = [baseUrl stringByAppendingString:token];
     NSURL *url = [NSURL URLWithString: append_url];
     NSURLRequest *boardRequest = [NSURLRequest requestWithURL:url];
@@ -45,7 +47,7 @@
             NSLog(@"Error");
         } else {
             for(NSDictionary *item in data) {
-                [lists setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
+                [cards setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
                 [tableData addObject:[item objectForKey:@"name"]];
             }
         }
@@ -62,13 +64,12 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = selectedCell.textLabel.text;
     
-    NSLog(@"List: %@", cellText);
-    NSLog(@"Id: %@", [lists objectForKey:cellText]);
+    NSLog(@"%@", cellText);
+    NSLog(@"%@", [cards objectForKey:cellText]);
     
-    CardController * viewController = [[CardController alloc] init];
-    [viewController setBoard_id:_board_id];
-    [viewController setList_id:[lists objectForKey:cellText]];
-    [self.navigationController pushViewController:viewController animated:YES];
+    //    ListController * viewController = [[ListController alloc] init];
+    //    [viewController setBoard_id:[boards objectForKey:cellText]];
+    //    [self.navigationController pushViewController:viewController animated:YES];
     
     
 }

@@ -1,5 +1,5 @@
 //
-//  ListController.h
+//  CardController.h
 //  MyTrello
 //
 //  Created by Ibrahima Dansokho on 14/07/2016.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardController.h"
 
-@interface ListController : UITableViewController
+@interface CardController : UITableViewController
 
 @property (nonatomic) NSString *board_id;
+@property (nonatomic) NSString *list_id;
 
 @end
