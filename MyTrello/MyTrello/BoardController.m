@@ -14,6 +14,8 @@
 
 @implementation BoardController {
     NSMutableArray *tableData;
+    NSMutableDictionary *boards;
+    NSMutableArray *data;
 }
 
 - (void)viewDidLoad
@@ -22,6 +24,8 @@
     
     // init table data
     tableData = [NSMutableArray array];
+    boards = [NSMutableDictionary dictionary];
+    
     NSString *token = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"token"];
     NSLog(@"%@", token);
@@ -32,7 +36,6 @@
     NSURLRequest *boardRequest = [NSURLRequest requestWithURL:url];
     NSHTTPURLResponse *responseCode = nil;
     NSData *response = [NSURLConnection sendSynchronousRequest:boardRequest returningResponse:&responseCode error:nil];
-    NSMutableArray *data;
     
     if([responseCode statusCode] != 200){
         NSLog(@"Error getting HTTP status code %li", (long)[responseCode statusCode]);
@@ -43,6 +46,7 @@
             NSLog(@"Error");
         } else {
             for(NSDictionary *item in data) {
+                [boards setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
                 [tableData addObject:[item objectForKey:@"name"]];
             }
         }
@@ -54,14 +58,24 @@
     return [tableData count];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *cellText = selectedCell.textLabel.text;
+    
+    NSLog(@"%@", cellText);
+    NSLog(@"%@", [boards objectForKey:cellText]);
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    static NSString *tableIdentifier = @"tableItem";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
