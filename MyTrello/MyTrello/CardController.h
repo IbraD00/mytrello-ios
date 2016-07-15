@@ -10,7 +10,6 @@
 
 @interface CardController : UITableViewController
 
-@property (nonatomic) NSString *board_id;
 @property (nonatomic) NSString *list_id;
 
 @end

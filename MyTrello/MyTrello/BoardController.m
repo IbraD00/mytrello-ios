@@ -16,6 +16,7 @@
     NSMutableArray *tableData;
     NSMutableDictionary *boards;
     NSMutableArray *data;
+    NSString *board_id;
 }
 
 - (void)viewDidLoad
@@ -28,7 +29,6 @@
     
     NSString *token = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"token"];
-    NSLog(@"%@", token);
     NSString *baseUrl = @"https://api.trello.com/1/members/me/boards?key=84f0517e4d81d7592f99c5170fc8ce0d&token=";
     NSString *append_url = [baseUrl stringByAppendingString:token];
     NSURL *url = [NSURL URLWithString: append_url];
@@ -37,7 +37,7 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:boardRequest returningResponse:&responseCode error:nil];
     
     if([responseCode statusCode] != 200){
-        NSLog(@"Error getting HTTP status code %li", (long)[responseCode statusCode]);
+        NSLog(@"Error HTTP %li", (long)[responseCode statusCode]);
     } else {
         NSError *error = nil;
         data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&error];
@@ -58,19 +58,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = selectedCell.textLabel.text;
-    
-    NSLog(@"Board: %@", cellText);
-    NSLog(@"Id: %@", [boards objectForKey:cellText]);
-    
-    ListController * viewController = [[ListController alloc] init];
-    [viewController setBoard_id:[boards objectForKey:cellText]];
-    [self.navigationController pushViewController:viewController animated:YES];
-    
-    
+    board_id = [boards objectForKey:cellText];
+    [self performSegueWithIdentifier:@"ListController" sender:self];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[ListController class]]) {
+        [(ListController *)segue.destinationViewController setBoard_id:board_id];
+    }
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

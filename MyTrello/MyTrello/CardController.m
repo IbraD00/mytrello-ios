@@ -29,8 +29,8 @@
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     NSLog(@"%@", token);
-    //    NSString *token = @"36ba4056078a105b2b556f64607c91d546cd87e8f0f34a43e8bdd2c9de66afcb"; //request.data.oauth_token;
-    //    NSString *baseUrl = @"https://api.trello.com//1/boards/%@/cards?key=84f0517e4d81d7592f99c5170fc8ce0d&token=";
+    NSLog(@"dddddqd%@", _list_id);
+    
     NSString *baseUrl = [NSString stringWithFormat: @"https://api.trello.com/1/lists/%@/cards/?key=84f0517e4d81d7592f99c5170fc8ce0d&token=", _list_id];
     NSString *append_url = [baseUrl stringByAppendingString:token];
     NSURL *url = [NSURL URLWithString: append_url];

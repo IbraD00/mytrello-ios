@@ -16,6 +16,7 @@
     NSMutableArray *tableData;
     NSMutableDictionary *lists;
     NSMutableArray *data;
+    NSString *list_id;
 }
 
 - (void)viewDidLoad
@@ -37,7 +38,7 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:boardRequest returningResponse:&responseCode error:nil];
     
     if([responseCode statusCode] != 200){
-        NSLog(@"Error getting HTTP status code %li", (long)[responseCode statusCode]);
+        NSLog(@"Error HTTP %li", (long)[responseCode statusCode]);
     } else {
         NSError *error = nil;
         data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&error];
@@ -52,6 +53,12 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[CardController class]]) {
+        [(CardController *)segue.destinationViewController setList_id:list_id];
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [tableData count];
@@ -61,16 +68,8 @@
     
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = selectedCell.textLabel.text;
-    
-    NSLog(@"List: %@", cellText);
-    NSLog(@"Id: %@", [lists objectForKey:cellText]);
-    
-    CardController * viewController = [[CardController alloc] init];
-    [viewController setBoard_id:_board_id];
-    [viewController setList_id:[lists objectForKey:cellText]];
-    [self.navigationController pushViewController:viewController animated:YES];
-    
-    
+    list_id = [lists objectForKey:cellText];
+    [self performSegueWithIdentifier:@"CardController" sender:self];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

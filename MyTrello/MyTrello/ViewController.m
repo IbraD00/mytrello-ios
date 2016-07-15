@@ -24,8 +24,6 @@
     if(token) {
         _InfoAction.text = @"Vous êtes déjà connecté";
     }
-    
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,8 +37,7 @@
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     if (token) {
-        BoardController* viewController = [[BoardController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
+        [self performSegueWithIdentifier:@"BoardController" sender:self];
     } else {
         [options setObject:@"true" forKey:@"cache"];
         [oauthioModal showWithProvider:@"trello" options:options];
@@ -56,9 +53,12 @@
     NSString *valueToSave = request.data.oauth_token;
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    BoardController* viewController = [[BoardController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self performSegueWithIdentifier:@"BoardController" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[BoardController class]]) {
+    }
 }
 
 - (void) didReceiveOAuthIOCode:(NSString *)code {}
