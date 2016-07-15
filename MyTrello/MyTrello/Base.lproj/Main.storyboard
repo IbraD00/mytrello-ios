@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -42,9 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.55433234766078987" blue="0.63735034879336339" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lJP-LA-yss">
-                        <barButtonItem key="backBarButtonItem" title="Retour" id="DPC-sV-esO"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="lJP-LA-yss"/>
                     <connections>
                         <outlet property="InfoAction" destination="mYH-Ib-l67" id="ual-qL-H7q"/>
                         <segue destination="xUB-Qq-dEj" kind="push" identifier="BoardController" id="PR5-4f-cr9"/>
@@ -52,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6342" y="-1429"/>
+            <point key="canvasLocation" x="-7542" y="-1384"/>
         </scene>
         <!--Boards-->
         <scene sceneID="cge-Vc-Ayk">
@@ -79,16 +78,28 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Boards" id="1Gl-yC-45r">
                         <barButtonItem key="backBarButtonItem" title="Retour" id="v8g-gW-6e5"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="RgR-bh-dSa">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OHl-Mg-9ZS">
-                                <rect key="frame" x="233" y="7" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ajouter"/>
-                                <connections>
-                                    <segue destination="IK1-AS-c9N" kind="push" id="kVp-Do-eAA"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="RgR-bh-dSa">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OHl-Mg-9ZS">
+                                    <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Ajouter"/>
+                                    <connections>
+                                        <segue destination="IK1-AS-c9N" kind="push" id="kVp-Do-eAA"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="uF0-dQ-uAn">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ivH-mF-UbD">
+                                    <rect key="frame" x="154" y="7" width="71" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Logout"/>
+                                    <connections>
+                                        <action selector="decoAction:" destination="xUB-Qq-dEj" eventType="touchUpInside" id="6ht-St-o1D"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="hPF-Nb-O9B" kind="push" identifier="ListController" id="geO-At-dML"/>
@@ -96,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAw-La-Mpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5916" y="-1429"/>
+            <point key="canvasLocation" x="-6910" y="-1405"/>
         </scene>
         <!--Lists-->
         <scene sceneID="ydj-cS-CRn">
@@ -136,7 +147,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7N-iC-zYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5379" y="-1429"/>
+            <point key="canvasLocation" x="-6495" y="-1384"/>
         </scene>
         <!--Create Board Controller-->
         <scene sceneID="YOd-Hz-mjn">
@@ -182,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myp-pK-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5916" y="-709"/>
+            <point key="canvasLocation" x="-6992" y="-461"/>
         </scene>
         <!--Cards-->
         <scene sceneID="UcG-9c-hkE">
@@ -222,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwA-1g-h9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4923" y="-1429"/>
+            <point key="canvasLocation" x="-5919" y="-1384"/>
         </scene>
         <!--Card-->
         <scene sceneID="EZT-qU-wQy">
@@ -266,8 +277,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-oH-DZG">
-                                <rect key="frame" x="20" y="220" width="293" height="143"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-oH-DZG">
+                                <rect key="frame" x="20" y="216" width="293" height="143"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -290,17 +301,18 @@
         <scene sceneID="rr3-rx-oox">
             <objects>
                 <navigationController storyboardIdentifier="toBoard" id="WMD-RE-ZQg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DuB-cg-jbH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAz-6d-l69">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DqZ-Nu-jku"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U50-O1-h4d"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrO-bI-Bso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7237" y="-1012"/>
+            <point key="canvasLocation" x="-8112" y="-947"/>
         </scene>
     </scenes>
 </document>

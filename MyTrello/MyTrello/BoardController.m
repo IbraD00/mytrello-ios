@@ -103,4 +103,32 @@
 //    }
 }
 
+- (IBAction)decoAction:(id)sender {
+    NSLog(@"LOGOUT");
+//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//    NSString *token = [[NSUserDefaults standardUserDefaults]
+//                       stringForKey:@"token"];
+//    NSLog(@"%@", token);
+////    [self performSegueWithIdentifier:@"MainController" sender:self];
+    
+    // for token
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
+    // URLrequests
+    NSURLCache *sharedCache = [NSURLCache sharedURLCache];
+    [sharedCache removeAllCachedResponses];
+    
+    // Also delete all stored cookies!
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *cookies = [cookieStorage cookies];
+    id cookie;
+    for (cookie in cookies) {
+        [cookieStorage deleteCookie:cookie];
+    }
+    
+    [self.navigationController popToRootViewControllerAnimated:true];
+    
+}
 @end

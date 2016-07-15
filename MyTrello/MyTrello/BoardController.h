@@ -10,5 +10,6 @@
 #import "ListController.h"
 
 @interface BoardController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+- (IBAction)decoAction:(id)sender;
 
 @end

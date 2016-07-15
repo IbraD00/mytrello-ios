@@ -22,7 +22,7 @@
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     if(token) {
-        _InfoAction.text = @"Vous êtes déjà connecté";
+        _InfoAction.text = @"";
     }
 }
 
@@ -33,15 +33,14 @@
 
 - (IBAction)loginAction:(id)sender {
     OAuthIOModal *oauthioModal = [[OAuthIOModal alloc] initWithKey:@"JLNwgM9ro0H5A_Q87qMmVzn4sY0" delegate:self];
-    NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
+//    NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     if (token) {
         [self performSegueWithIdentifier:@"BoardController" sender:self];
     } else {
-        [options setObject:@"true" forKey:@"cache"];
-        [options setValue:@"write" forKey:@"scope"];
-        [oauthioModal showWithProvider:@"trello" options:options];
+//        [options setObject:@"true" forKey:@"cache"];
+        [oauthioModal showWithProvider:@"trello"];
     }
 }
 
@@ -55,10 +54,6 @@
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self performSegueWithIdentifier:@"BoardController" sender:self];
-    
-    //logout
-    //    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
