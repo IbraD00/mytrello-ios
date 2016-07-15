@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ACardController.h"
 
 @interface CardController : UITableViewController
 

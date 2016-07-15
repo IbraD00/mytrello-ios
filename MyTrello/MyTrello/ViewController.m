@@ -40,6 +40,7 @@
         [self performSegueWithIdentifier:@"BoardController" sender:self];
     } else {
         [options setObject:@"true" forKey:@"cache"];
+        [options setValue:@"write" forKey:@"scope"];
         [oauthioModal showWithProvider:@"trello" options:options];
     }
 }
@@ -54,6 +55,10 @@
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self performSegueWithIdentifier:@"BoardController" sender:self];
+    
+    //logout
+    //    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

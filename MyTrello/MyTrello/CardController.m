@@ -16,6 +16,7 @@
     NSMutableArray *tableData;
     NSMutableDictionary *cards;
     NSMutableArray *data;
+    NSString *card_id;
 }
 
 - (void)viewDidLoad
@@ -61,6 +62,8 @@
     
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = selectedCell.textLabel.text;
+    card_id = [cards objectForKey:cellText];
+    [self performSegueWithIdentifier:@"ACardController" sender:self];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,6 +81,12 @@
 //    cell.textLabel.textColor = [UIColor orangeColor];
 //    cell.detailTextLabel.text = @"Red, White";
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[ACardController class]]) {
+        [(ACardController *)segue.destinationViewController setCard_id:card_id];
+    }
 }
 
 @end
