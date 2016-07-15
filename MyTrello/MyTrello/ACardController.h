@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *state;
 @property (nonatomic) NSString *card_id;
 @property (weak, nonatomic) IBOutlet UITextView *members;
+@property (weak, nonatomic) IBOutlet UITextView *labels;
 
 @end

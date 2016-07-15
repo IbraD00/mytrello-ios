@@ -33,7 +33,7 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:boardRequest returningResponse:&responseCode error:nil];
     
     if([responseCode statusCode] != 200){
-        NSLog(@"Error getting HTTP status code %li", (long)[responseCode statusCode]);
+        NSLog(@"Error HTTP %li", (long)[responseCode statusCode]);
     } else {
         NSError *error = nil;
         data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&error];
@@ -45,6 +45,10 @@
             if([data objectForKey:@"closed"] == false)
                 _state.text = @"Fermé";
             _state.text = @"Ouvert";
+            for(NSDictionary *label in [data objectForKey:@"labels"]) {
+                NSString *tmp = [NSString stringWithFormat: @"%@, ", [label objectForKey:@"name"]];
+                _labels.text = [NSString stringWithFormat: @"%@%@", _labels.text, tmp];
+            }
         }
     }
     [self getCardMembers];
