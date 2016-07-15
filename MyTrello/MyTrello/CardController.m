@@ -29,8 +29,6 @@
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     NSLog(@"%@", token);
-    NSLog(@"dddddqd%@", _list_id);
-    
     NSString *baseUrl = [NSString stringWithFormat: @"https://api.trello.com/1/lists/%@/cards/?key=84f0517e4d81d7592f99c5170fc8ce0d&token=", _list_id];
     NSString *append_url = [baseUrl stringByAppendingString:token];
     NSURL *url = [NSURL URLWithString: append_url];
@@ -49,7 +47,6 @@
             for(NSDictionary *item in data) {
                 [cards setObject:[item objectForKey:@"id"]  forKey:[item objectForKey:@"name"]];
                 [tableData addObject:[item objectForKey:@"name"]];
-                NSLog(@"%@", [item objectForKey:@"idLabels"]);
             }
         }
     }
@@ -64,9 +61,6 @@
     
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = selectedCell.textLabel.text;
-    
-    NSLog(@"%@", cellText);
-    NSLog(@"%@", [cards objectForKey:cellText]);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,8 +75,8 @@
 //    cell.backgroundColor = [UIColor orangeColor];
     
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
-    cell.textLabel.textColor = [UIColor orangeColor];
-    cell.detailTextLabel.text = @"Red, White";
+//    cell.textLabel.textColor = [UIColor orangeColor];
+//    cell.detailTextLabel.text = @"Red, White";
     return cell;
 }
 

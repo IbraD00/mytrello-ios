@@ -19,6 +19,7 @@
 		67CD151A1D33C44900548ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CD15181D33C44900548ED4 /* LaunchScreen.storyboard */; };
 		67CD15251D33C44900548ED4 /* MyTrelloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD15241D33C44900548ED4 /* MyTrelloTests.m */; };
 		67CD15301D33C44900548ED4 /* MyTrelloUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD152F1D33C44900548ED4 /* MyTrelloUITests.m */; };
+		67F572511D39298A00AF3D86 /* CreateBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F572501D39298A00AF3D86 /* CreateBoardController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		67CD152B1D33C44900548ED4 /* MyTrelloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTrelloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CD152F1D33C44900548ED4 /* MyTrelloUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTrelloUITests.m; sourceTree = "<group>"; };
 		67CD15311D33C44900548ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67F5724F1D39298A00AF3D86 /* CreateBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBoardController.h; sourceTree = "<group>"; };
+		67F572501D39298A00AF3D86 /* CreateBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBoardController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 		67CD15091D33C44900548ED4 /* MyTrello */ = {
 			isa = PBXGroup;
 			children = (
+				67F5724F1D39298A00AF3D86 /* CreateBoardController.h */,
+				67F572501D39298A00AF3D86 /* CreateBoardController.m */,
 				670C19C11D37ADC30075DD9E /* CardController.h */,
 				670C19C21D37ADC30075DD9E /* CardController.m */,
 				670C19BE1D37A7030075DD9E /* ListController.h */,
@@ -294,6 +299,7 @@
 				67CD15121D33C44900548ED4 /* ViewController.m in Sources */,
 				670C19C01D37A7030075DD9E /* ListController.m in Sources */,
 				67CD150F1D33C44900548ED4 /* AppDelegate.m in Sources */,
+				67F572511D39298A00AF3D86 /* CreateBoardController.m in Sources */,
 				67CD150C1D33C44900548ED4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

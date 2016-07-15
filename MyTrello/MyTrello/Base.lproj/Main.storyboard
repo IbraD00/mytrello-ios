@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4886" y="-1337"/>
+            <point key="canvasLocation" x="-6342" y="-1429"/>
         </scene>
         <!--Boards-->
         <scene sceneID="cge-Vc-Ayk">
@@ -84,6 +84,9 @@
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ajouter"/>
+                                <connections>
+                                    <segue destination="IK1-AS-c9N" kind="push" id="kVp-Do-eAA"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -93,7 +96,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAw-La-Mpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4405" y="-1186"/>
+            <point key="canvasLocation" x="-5916" y="-1429"/>
         </scene>
         <!--Lists-->
         <scene sceneID="ydj-cS-CRn">
@@ -133,7 +136,53 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7N-iC-zYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3900" y="-1186"/>
+            <point key="canvasLocation" x="-5331" y="-1429"/>
+        </scene>
+        <!--Create Board Controller-->
+        <scene sceneID="YOd-Hz-mjn">
+            <objects>
+                <viewController id="IK1-AS-c9N" customClass="CreateBoardController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPa-GV-Mkr"/>
+                        <viewControllerLayoutGuide type="bottom" id="u9a-nn-PLV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n5H-RQ-7WY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du board" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXJ-Ee-TQI">
+                                <rect key="frame" x="20" y="286" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNQ-bd-sxr">
+                                <rect key="frame" x="87" y="363" width="147" height="30"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.24313725489999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Ajouter">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBoard:" destination="IK1-AS-c9N" eventType="touchUpInside" id="gpz-Xl-h8R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom du board" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlT-mT-xWm">
+                                <rect key="frame" x="104" y="193" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.55433234769999995" blue="0.63735034879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Bh-YX-rMz"/>
+                    <connections>
+                        <outlet property="boardLabel" destination="AlT-mT-xWm" id="Ovc-ai-GIc"/>
+                        <outlet property="boardName" destination="zXJ-Ee-TQI" id="j9I-Bu-d3R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myp-pK-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5916" y="-709"/>
         </scene>
         <!--Cards-->
         <scene sceneID="UcG-9c-hkE">
@@ -170,7 +219,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwA-1g-h9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3413" y="-1186"/>
+            <point key="canvasLocation" x="-4739" y="-1429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rr3-rx-oox">
@@ -186,7 +235,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrO-bI-Bso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5715" y="-1124"/>
+            <point key="canvasLocation" x="-7237" y="-1012"/>
         </scene>
     </scenes>
 </document>
