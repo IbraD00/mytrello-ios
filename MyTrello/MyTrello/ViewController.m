@@ -19,11 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *token = [[NSUserDefaults standardUserDefaults]
-                       stringForKey:@"token"];
-    if(token) {
-        _InfoAction.text = @"";
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,13 +28,11 @@
 
 - (IBAction)loginAction:(id)sender {
     OAuthIOModal *oauthioModal = [[OAuthIOModal alloc] initWithKey:@"JLNwgM9ro0H5A_Q87qMmVzn4sY0" delegate:self];
-//    NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     NSString *token = [[NSUserDefaults standardUserDefaults]
                        stringForKey:@"token"];
     if (token) {
         [self performSegueWithIdentifier:@"BoardController" sender:self];
     } else {
-//        [options setObject:@"true" forKey:@"cache"];
         [oauthioModal showWithProvider:@"trello"];
     }
 }
@@ -50,6 +43,7 @@
 }
 
 - (void)didReceiveOAuthIOResponse:(OAuthIORequest *)request {
+    NSLog(@"tchuuuuuuuuu");
     NSString *valueToSave = request.data.oauth_token;
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] synchronize];

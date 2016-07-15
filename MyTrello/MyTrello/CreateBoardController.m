@@ -26,16 +26,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)addBoard:(id)sender {
     
     NSLog(@"add boards %@", _boardName.text);
@@ -54,15 +44,9 @@
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if(conn) {
-        NSLog(@"Connection Successful");
-    } else {
-        NSLog(@"Connection could not be made");
-    }
-    
 }
 
-// This method is used to receive the data which we get using post method.
+// on receive
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData*)response{
     NSLog(@"success %@", response);
     NSError *error = nil;
@@ -74,12 +58,12 @@
     }
 }
 
-// This method receives the error report in case of connection is not made to server.
+// on fail
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"error %@", error);
 }
 
-// This method is used to process the data after connection has made successfully.
+// on finish
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 NSLog(@"conexxxx%@", connection);
 }

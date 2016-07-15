@@ -85,33 +85,7 @@
     return cell;
 }
 
-- (IBAction)AddBoard:(id)sender {
-//    NSString *post = [NSString stringWithFormat:@"Username=%@&Password=%@",@"username",@"password"];
-//    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-//    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//    [request setURL:[NSURL URLWithString:@"http://www.abcde.com/xyz/login.aspx"]];
-//    [request setHTTPMethod:@"POST"];
-//    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setHTTPBody:postData];
-//    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-//    if(conn) {
-//        NSLog(@"Connection Successful");
-//    } else {
-//        NSLog(@"Connection could not be made");
-//    }
-}
-
 - (IBAction)decoAction:(id)sender {
-    NSLog(@"LOGOUT");
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-//    NSString *token = [[NSUserDefaults standardUserDefaults]
-//                       stringForKey:@"token"];
-//    NSLog(@"%@", token);
-////    [self performSegueWithIdentifier:@"MainController" sender:self];
-    
     // for token
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
