@@ -38,7 +38,7 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:boardRequest returningResponse:&responseCode error:nil];
     
     if([responseCode statusCode] != 200){
-        NSLog(@"Error getting HTTP status code %li", (long)[responseCode statusCode]);
+        NSLog(@"Error HTTP %li", (long)[responseCode statusCode]);
     } else {
         NSError *error = nil;
         data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&error];

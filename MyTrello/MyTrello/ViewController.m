@@ -43,7 +43,6 @@
 }
 
 - (void)didReceiveOAuthIOResponse:(OAuthIORequest *)request {
-    NSLog(@"tchuuuuuuuuu");
     NSString *valueToSave = request.data.oauth_token;
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] synchronize];

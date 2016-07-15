@@ -52,7 +52,7 @@
     NSError *error = nil;
     data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&error];
     if (!data) {
-        NSLog(@"Error when parsing json");
+        NSLog(@"Error json");
     } else {
         NSLog(@"%@", data);
     }
@@ -65,7 +65,7 @@
 
 // on finish
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-NSLog(@"conexxxx%@", connection);
+    NSLog(@"conexxxx%@", connection);
 }
 
 @end
